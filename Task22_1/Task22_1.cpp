@@ -13,7 +13,7 @@ int main()
 	map <string, string> name;
 	while (exit)
 	{
-		cout << "What do you want to do :\n1 - add a new contact,\n2 - find out the name of the subscriber,\n3 - find out the phone number\n4-exit\n";
+		cout << "\nWhat do you want to do :\n1 - add a new contact,\n2 - find out the name of the subscriber,\n3 - find out the phone number\n4-exit\n";
 		cin >> number;
 		if (number == 1)
 		{
@@ -25,7 +25,7 @@ int main()
 		}
 		else if (number == 2)
 		{
-			cout << "Enter your phone number : ";
+			cout << "\nEnter your phone number : ";
 			cin >> phone;
 			for (auto i : call)
 			{
@@ -35,12 +35,12 @@ int main()
 		}
 		else if (number == 3)
 		{
-			cout << "Enter name : ";
+			cout << "\nEnter name : ";
 			cin >> names_phone;
 			for (auto i : call)
 			{
 				if (i.second == names_phone)
-					cout << i.first << endl;
+					cout << i.first <<" "<<i.second<< endl;
 			}
 		}
 		else if (number == 4)
@@ -48,7 +48,7 @@ int main()
 			exit = false;
 		}
 		else
-			cout << "Invalid input" << endl;
+			cout << "\nInvalid input" << endl;
 	}
 }
 
