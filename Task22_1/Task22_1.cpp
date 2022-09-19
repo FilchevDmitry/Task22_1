@@ -39,10 +39,12 @@ int main()
 		{
 			cout << "\nEnter your phone number : ";
 			cin >> phone;
-			for (auto i :call)
-			{
-				if (i.first == phone)
-					cout << "Name - " << i.second << endl;
+			auto find_map = call.find(phone);
+			if (find_map != call.end()) {
+				cout << "Name - " << find_map->second<<"\n";
+			}
+			else {
+				cout << "This number is not in the database!" << endl;
 			}
 		
 		}
@@ -50,13 +52,15 @@ int main()
 		{
 			cout << "\nEnter name : ";
 			cin >> names_phone;
-			for (auto i : name)
+			auto find_map = name.find(names_phone);
+			if (find_map != name.end()) 
 			{
-				if (i.first == names_phone)
-				{
-					for(auto n : name[names_phone])
+				cout << find_map->first << "\n";
+				for (auto n : name[names_phone])
 					cout << n << endl;
-				}
+			}
+			else {
+				cout << "This name is not in the database!" << endl;
 			}
 		}
 		else if (number == 4)
